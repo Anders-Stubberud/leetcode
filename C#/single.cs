@@ -6,5 +6,4 @@ public class _single_ {
         }
         return ans;
     }
-
 }
