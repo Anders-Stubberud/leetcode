@@ -11,3 +11,6 @@ class Solution:
                 intervals.pop(i)
 
         return intervals
+
+solution = Solution()
+print(solution.merge([ [1,2], [3, 4] ]))
