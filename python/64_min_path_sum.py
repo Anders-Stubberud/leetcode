@@ -1,8 +1,8 @@
 from typing import List
-from math import inf
 
 
 class Solution:
+    # dynamisk, iterativ bottom-up
     def minPathSum(self, grid: List[List[int]]) -> int: # type: ignore
 
         n, m = len(grid), len(grid[0])
@@ -14,4 +14,4 @@ class Solution:
             for j in range(1, m):
                 grid[i][j] += min(grid[i][j - 1], grid[i - 1][j])
 
-        return grid[n - 1][m - 1]
+        return grid[-1][-1]
