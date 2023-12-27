@@ -3,8 +3,15 @@ import time
 
 class Solution:
 
+    def solveSudoku(self, board):
+
+        def sudoku(row, column):
+
+            if row > 8 : return True
+
+
     # treg
-    def solveSudoku(self, board: List[List[str]]) -> None:
+    def solveSudoku2(self, board: List[List[str]]) -> None:
         """
         Do not return anything, modify board in-place instead.
         """

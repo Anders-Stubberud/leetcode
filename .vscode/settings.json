@@ -1,4 +1,10 @@
 {
+<<<<<<< Updated upstream
     "python.analysis.autoImportCompletions": true,
     "python.analysis.typeCheckingMode": "basic"
+=======
+    "files.watcherExclude": {
+        "**/target": true
+    }
+>>>>>>> Stashed changes
 }
