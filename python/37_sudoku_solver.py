@@ -7,10 +7,38 @@ class Solution:
 
         def sudoku(row, column):
 
-            if row > 8 : return True
+            if row > 8: return True
+            if column > 8 : return sudoku(row + 1, 0)
+            if board[row][column].isdigit(): return sudoku(row, column + 1)
+
+            for i in range(1, 10):
+                val = str(i)
+                if safe(row, column, val):
+                    board[row][column] = val
+                    if sudoku(row, column + 1) : return True
+                    else : board[row][column] = '.'
+
+            return False
+
+        def safe(row, column, value):
+
+            low_row, low_col = (row // 3) * 3, (column // 3) * 3
+            high_row, high_col = low_row + 3, low_col + 3
+
+            for i in range(9):
+                if board[i][column] == value or board[row][i] == value : return False
+
+            for i in range(low_row, high_row):
+                for j in range(low_col, high_col):
+                    if board[i][j] == value:
+                        return False
+
+            return True
+
+        sudoku(0, 0)
 
 
-    # treg
+                # treg
     def solveSudoku2(self, board: List[List[str]]) -> None:
         """
         Do not return anything, modify board in-place instead.
